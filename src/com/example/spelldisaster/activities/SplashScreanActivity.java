@@ -1,4 +1,4 @@
-package com.example.spelldisaster.activity;
+package com.example.spelldisaster.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.spelldisaster.R;
+import com.example.spelldisaster.interfaces.BaseInterfaceActivity;
 
 /**
  * @author horodysk
@@ -24,7 +25,7 @@ public class SplashScreanActivity extends Activity {
             @Override
             public void run() {
 
-                Intent intent = new Intent(SplashScreanActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreanActivity.this, BaseInterfaceActivity.class);
                 startActivity(intent);
 
                 finish();
