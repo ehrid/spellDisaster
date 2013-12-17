@@ -9,7 +9,7 @@ import com.example.spelldisaster.activities.MainActivity;
 /**
  * @author horodysk
  */
-public class LogoUnity extends SplashscreanBaseActivity {
+public class LogoUnity extends BaseSplashscreanActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import com.example.spelldisaster.R;
 /**
  * @author horodysk
  */
-public abstract class SplashscreanBaseActivity extends Activity {
+public abstract class BaseSplashscreanActivity extends Activity {
 
     private static final int _TIME = 2 * 1000;
 

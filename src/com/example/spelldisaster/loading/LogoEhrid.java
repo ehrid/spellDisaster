@@ -8,7 +8,7 @@ import com.example.spelldisaster.R;
 /**
  * @author horodysk
  */
-public class LogoEhrid extends SplashscreanBaseActivity {
+public class LogoEhrid extends BaseSplashscreanActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
