@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Global -->
     <string name="app_name">spellDisaster</string>
-    <string name="action_settings">Settings</string>
-    <string name="main_screen">Hello world!</string>
 
 </resources>
