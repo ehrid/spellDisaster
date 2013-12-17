@@ -16,7 +16,6 @@
 
 	
 	<!-- Dialogs -->
-	<color name="dialog_background">#FFFFFF</color>
 	<color name="dialog_stroke">#333333</color>
 
 	
