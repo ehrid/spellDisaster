@@ -1,37 +1,48 @@
 package com.example.spelldisaster.interfaces;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.spelldisaster.R;
-import com.example.spelldisaster.activities.MenuActivity;
 
 /**
  * @author horodysk
  */
 public class BaseInterfaceActivity extends Activity implements OnClickListener {
 
-    ImageView button_settings;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.dialog_basic);
 
-        button_settings = (ImageView) findViewById(R.id.button_settings);
-        button_settings.setOnClickListener(this);
+        // close button
+        ImageView close = (ImageView) findViewById(R.id.button_close);
+        close.setOnClickListener(this);
+
+        // unclickable body
+        RelativeLayout body = (RelativeLayout) findViewById(R.id.dialog_frame);
+        body.setOnClickListener(this);
+
+        // exit dialog upon clicking outside body
+        RelativeLayout background = (RelativeLayout) findViewById(R.id.dialog_background);
+        background.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_settings:
-                Intent intent = new Intent(BaseInterfaceActivity.this, MenuActivity.class);
-                startActivity(intent);
+            case R.id.button_close:
+                finish();
+                break;
+            case R.id.dialog_frame:
+                // needs to be above R.id.dialog_background
+                break;
+            case R.id.dialog_background:
+                finish();
                 break;
         }
     }
