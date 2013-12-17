@@ -2,33 +2,38 @@
     android:id="@+id/dialog_background"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
-    
+    android:orientation="vertical" >
+
     <RelativeLayout
         android:id="@+id/dialog_frame"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:padding="@dimen/dialog_padding"
-        android:background="@drawable/dialog_body">
-        
-        <include
-            android:id="@+id/dialog_body"
+        android:background="@drawable/dialog_background">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            layout="@layout/dialog_empty" />
-        
+            android:background="@drawable/dialog_frame"
+            android:padding="@dimen/dialog_padding" >
+
+            <include
+                android:id="@+id/dialog_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/dialog_empty" />
+        </RelativeLayout>
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/button_close"
         android:layout_width="@dimen/interface_button_size"
         android:layout_height="@dimen/interface_button_size"
-        android:layout_toRightOf="@+id/dialog_frame"
         android:layout_above="@+id/dialog_frame"
-        android:layout_marginLeft="@dimen/dialog_close_indentation"
         android:layout_marginBottom="@dimen/dialog_close_indentation"
+        android:layout_marginLeft="@dimen/dialog_close_indentation"
+        android:layout_toRightOf="@+id/dialog_frame"
         android:src="@drawable/button_close" />
 
 </RelativeLayout>
