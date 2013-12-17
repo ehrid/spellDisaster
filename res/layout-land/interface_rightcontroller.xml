@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/right_controller_left"
+        android:layout_width="@dimen/interface_button_size"
+        android:layout_height="@dimen/interface_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/interface_button_margin_small"
+        android:layout_marginRight="@dimen/interface_button_margin_big"
+        android:src="@drawable/controller_arrow_left" />
+
+    <ImageView
+        android:id="@+id/right_controller_middle"
+        android:layout_width="@dimen/interface_button_size"
+        android:layout_height="@dimen/interface_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/interface_button_margin_small"
+        android:layout_marginRight="@dimen/interface_button_margin_small"
+        android:src="@drawable/blank" />
+
+    <ImageView
+        android:id="@+id/right_controller_right"
+        android:layout_width="@dimen/interface_button_size"
+        android:layout_height="@dimen/interface_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/interface_button_margin_small"
+        android:src="@drawable/controller_arrow_right" />
+
+    <ImageView
+        android:id="@+id/right_controller_down"
+        android:layout_width="@dimen/interface_button_size"
+        android:layout_height="@dimen/interface_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/interface_button_margin_small"
+        android:src="@drawable/controller_arrow_down" />
+
+    <ImageView
+        android:id="@+id/right_controller_up"
+        android:layout_width="@dimen/interface_button_size"
+        android:layout_height="@dimen/interface_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/interface_button_margin_big"
+        android:layout_marginRight="@dimen/interface_button_margin_small"
+        android:src="@drawable/controller_arrow_up" />
+
+</RelativeLayout>

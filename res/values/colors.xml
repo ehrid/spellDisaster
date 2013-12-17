@@ -8,6 +8,7 @@
 	<color name="text_gray">#717171</color>
 
     <!-- Backgrounds -->
+    <color name="background_transparent">#00000000</color>
 	<color name="background_white">#FFFFFF</color>
 	<color name="background_black">#000000</color>
 	<color name="background_gray">#717171</color>
