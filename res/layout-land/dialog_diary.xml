@@ -9,4 +9,36 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/background_diary" />
 
+    <EditText
+        android:id="@+id/diary_left"
+        android:layout_width="140sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:maxLines="7"
+        android:textColor="@color/text_black"
+        android:textSize="14sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/diary_right"
+        android:layout_width="140sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/diary_left"
+        android:background="@null"
+        android:maxLines="7"
+        android:textColor="@color/text_black"
+        android:textSize="14sp" >
+
+        <requestFocus />
+    </EditText>
+
 </RelativeLayout>
