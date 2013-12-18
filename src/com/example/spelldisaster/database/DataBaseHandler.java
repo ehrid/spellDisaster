@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * @author horodysk
  */
-public class DataBaseHelper extends SQLiteOpenHelper {
+public class DataBaseHandler extends SQLiteOpenHelper {
 
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -33,7 +33,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String KEY_RIGHT = "rightPage";
 
     /***/
-    public DataBaseHelper(Context context) {
+    public DataBaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -78,16 +78,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public DiaryPageObject getDiaryPage(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
+        DiaryPageObject page = new DiaryPageObject(id, id, "", "");
+
         Cursor cursor = db.query(TABLE_PAGES, new String[] { KEY_ID, KEY_PAGE, KEY_LEFT, KEY_RIGHT }, KEY_ID + "=?",
             new String[] { String.valueOf(id) }, null, null, null, null);
 
-        if (cursor == null) {
-            return null;
+        if (cursor != null) {
+            cursor.moveToFirst();
+
+            if (cursor.getCount() > 0) {
+                page.setLeftPage(cursor.getString(2));
+                page.setRightPage(cursor.getString(3));
+            }
         }
 
-        cursor.moveToFirst();
-        DiaryPageObject page = new DiaryPageObject(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)), cursor.getString(2),
-            cursor.getString(3));
         return page;
     }
 
@@ -130,7 +134,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     /**
      * Updating single page
      */
-    public int updateContact(DiaryPageObject page) {
+    public int updateDiaryPage(DiaryPageObject page) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

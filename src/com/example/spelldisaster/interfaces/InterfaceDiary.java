@@ -7,6 +7,8 @@ import android.view.ViewStub;
 import android.widget.EditText;
 
 import com.example.spelldisaster.R;
+import com.example.spelldisaster.database.DataBaseHandler;
+import com.example.spelldisaster.database.DiaryPageObject;
 
 /**
  * @author horodysk
@@ -17,6 +19,10 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
 
     private EditText _rightPage;
 
+    private DiaryPageObject _page;
+
+    private DataBaseHandler _db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +31,10 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
         initializePages(inflated);
         setPagesFont();
 
+        _db = new DataBaseHandler(this);
+        _page = _db.getDiaryPage(0);
+        _leftPage.setText(_page.getLeftPage());
+        _rightPage.setText(_page.getRightPage());
     }
 
     private View initializeDialogBody() {
@@ -47,7 +57,11 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
 
     @Override
     protected void onClickAction(View v) {
-        // fill
+        saveDiaryPagesState();
+    }
+
+    private void saveDiaryPagesState() {
+        _db.updateDiaryPage(_page);
     }
 
 }
