@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.spelldisaster"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="0.01" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -33,6 +33,11 @@
         
         <activity
             android:name="com.example.spelldisaster.interfaces.InterfaceMenu"
+            android:screenOrientation="landscape"
+            android:theme="@style/transparentBackground"/>
+        
+        <activity
+            android:name="com.example.spelldisaster.interfaces.InterfaceSettings"
             android:screenOrientation="landscape"
             android:theme="@style/transparentBackground"/>
     </application>

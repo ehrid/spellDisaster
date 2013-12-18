@@ -1,5 +1,6 @@
 package com.example.spelldisaster.interfaces;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -24,16 +25,21 @@ public class InterfaceMenu extends BaseInterfaceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeButtons();
+
+        View inflated = initializeDialogBody();
+        initializeButtons(inflated);
         setOnClickListener();
         setButtonsFont();
     }
 
-    private void initializeButtons() {
+    private View initializeDialogBody() {
         ViewStub stub = (ViewStub) findViewById(R.id.dialog_stub);
         stub.setLayoutResource(R.layout.dialog_menu);
         View inflated = stub.inflate();
+        return inflated;
+    }
 
+    private void initializeButtons(View inflated) {
         _inventory = (Button) inflated.findViewById(R.id.menu_inventory);
         _diary = (Button) inflated.findViewById(R.id.menu_diary);
         _settings = (Button) inflated.findViewById(R.id.menu_settings);
@@ -63,6 +69,8 @@ public class InterfaceMenu extends BaseInterfaceActivity {
             case R.id.menu_diary:
                 break;
             case R.id.menu_settings:
+                finish();
+                startSettings();
                 break;
             case R.id.menu_exit:
                 // TODO disconnecting
@@ -70,5 +78,10 @@ public class InterfaceMenu extends BaseInterfaceActivity {
                 moveTaskToBack(true);
                 break;
         }
+    }
+
+    void startSettings() {
+        Intent intent = new Intent(InterfaceMenu.this, InterfaceSettings.class);
+        startActivity(intent);
     }
 }

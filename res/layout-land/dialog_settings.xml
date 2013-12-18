@@ -2,60 +2,82 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:baselineAligned="false"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="@dimen/dialog_margins"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/settings_voice_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/settings_voice" />
-
-        <TextView
-            android:id="@+id/settings_mic_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/settings_mic" 
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/menu_button_text_size"/>
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/dialog_padding"
+        android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/settings_sound_text"
-            android:layout_width="wrap_content"
+            android:layout_width="150sp"
             android:layout_height="wrap_content"
-            android:text="@string/settings_sound" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="@dimen/dialog_margins"
-        android:orientation="vertical" >
-
-        <ToggleButton
-            android:id="@+id/settings_voice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/style_settings_toggle" />
-
-        <ToggleButton
-            android:id="@+id/settings_mic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/style_settings_toggle" />
+            android:text="@string/settings_sound"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/menu_button_text_size" />
 
         <ToggleButton
             android:id="@+id/settings_sound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/style_settings_toggle" />
+            android:background="@drawable/style_settings_toggle" 
+            android:checked="true"
+            android:textOn=""
+            android:textOff=""/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/settings_voice_text"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_voice"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/menu_button_text_size" />
+
+        <ToggleButton
+            android:id="@+id/settings_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_settings_toggle"
+            android:checked="true"
+            android:textOn=""
+            android:textOff="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/dialog_padding"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/settings_mic_text"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_mic"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/menu_button_text_size" />
+
+        <ToggleButton
+            android:id="@+id/settings_mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_settings_toggle"
+            android:checked="true"
+            android:textOn=""
+            android:textOff="" />
     </LinearLayout>
 
 </LinearLayout>
