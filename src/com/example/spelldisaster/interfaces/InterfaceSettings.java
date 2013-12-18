@@ -16,6 +16,12 @@ import com.example.spelldisaster.R;
  */
 public class InterfaceSettings extends BaseInterfaceActivity {
 
+    private static final String _SOUND_LABEL = "sound";
+
+    private static final String _VOICE_LABEL = "voice";
+
+    private static final String _MIC_LABEL = "mic";
+
     private TextView _soundLabel;
 
     private TextView _voiceLabel;
@@ -66,9 +72,9 @@ public class InterfaceSettings extends BaseInterfaceActivity {
     private void setSwithcesValues() {
         _mPrefs = getSharedPreferences(_PREFS, 0);
 
-        boolean sound = _mPrefs.getBoolean("sound", true);
-        boolean voice = _mPrefs.getBoolean("voice", true);
-        boolean mic = _mPrefs.getBoolean("mic", true);
+        boolean sound = _mPrefs.getBoolean(_SOUND_LABEL, true);
+        boolean voice = _mPrefs.getBoolean(_VOICE_LABEL, true);
+        boolean mic = _mPrefs.getBoolean(_MIC_LABEL, true);
 
         _sound.setActivated(sound);
         _voice.setActivated(voice);
@@ -105,19 +111,19 @@ public class InterfaceSettings extends BaseInterfaceActivity {
 
     private void saveNewSoundValue() {
         Editor e = _mPrefs.edit();
-        e.putBoolean("sound", _sound.isChecked());
+        e.putBoolean(_SOUND_LABEL, _sound.isChecked());
         e.commit();
     }
 
     private void saveNewVoiceValue() {
         Editor e = _mPrefs.edit();
-        e.putBoolean("voice", _voice.isChecked());
+        e.putBoolean(_VOICE_LABEL, _voice.isChecked());
         e.commit();
     }
 
     private void saveNewMicValue() {
         Editor e = _mPrefs.edit();
-        e.putBoolean("mic", _mic.isChecked());
+        e.putBoolean(_MIC_LABEL, _mic.isChecked());
         e.commit();
     }
 }
