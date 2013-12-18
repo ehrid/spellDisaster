@@ -40,6 +40,11 @@
             android:name="com.example.spelldisaster.interfaces.InterfaceSettings"
             android:screenOrientation="landscape"
             android:theme="@style/transparentBackground"/>
+        
+        <activity
+            android:name="com.example.spelldisaster.interfaces.InterfaceDiary"
+            android:screenOrientation="landscape"
+            android:theme="@style/transparentBackground"/>
     </application>
 
 </manifest>

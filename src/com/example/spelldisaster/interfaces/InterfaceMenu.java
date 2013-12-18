@@ -67,9 +67,9 @@ public class InterfaceMenu extends BaseInterfaceActivity {
             case R.id.menu_inventory:
                 break;
             case R.id.menu_diary:
+                startDiary();
                 break;
             case R.id.menu_settings:
-                finish();
                 startSettings();
                 break;
             case R.id.menu_exit:
@@ -80,7 +80,14 @@ public class InterfaceMenu extends BaseInterfaceActivity {
         }
     }
 
+    void startDiary() {
+        finish();
+        Intent intent = new Intent(InterfaceMenu.this, InterfaceDiary.class);
+        startActivity(intent);
+    }
+
     void startSettings() {
+        finish();
         Intent intent = new Intent(InterfaceMenu.this, InterfaceSettings.class);
         startActivity(intent);
     }
