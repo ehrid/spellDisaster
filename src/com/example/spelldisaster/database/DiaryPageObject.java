@@ -20,6 +20,7 @@ public class DiaryPageObject {
         _rightPage = rightPage;
     }
 
+    /***/
     public int getId() {
         return _id;
     }

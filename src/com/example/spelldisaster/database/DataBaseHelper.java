@@ -1,5 +1,8 @@
 package com.example.spelldisaster.database;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -86,6 +89,30 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         DiaryPageObject page = new DiaryPageObject(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)), cursor.getString(2),
             cursor.getString(3));
         return page;
+    }
+
+    /**
+     * Getting all pages
+     */
+    public List<DiaryPageObject> getAllDiaryPages() {
+        List<DiaryPageObject> diary = new ArrayList<DiaryPageObject>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_PAGES;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                DiaryPageObject page = new DiaryPageObject(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)),
+                    cursor.getString(2), cursor.getString(3));
+                diary.add(page);
+            }
+            while (cursor.moveToNext());
+        }
+
+        return diary;
     }
 
     /**
