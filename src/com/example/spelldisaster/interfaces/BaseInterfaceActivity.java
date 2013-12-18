@@ -18,7 +18,10 @@ public abstract class BaseInterfaceActivity extends Activity implements OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_basic);
+        initializeBaseItems();
+    }
 
+    protected void initializeBaseItems() {
         // close button
         ImageView close = (ImageView) findViewById(R.id.button_close);
         close.setOnClickListener(this);
