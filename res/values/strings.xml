@@ -3,5 +3,16 @@
 
     <!-- Global -->
     <string name="app_name">spellDisaster</string>
+    
+    <!-- Menu -->
+    <string name="menu_inventory">INVENTORY</string>
+    <string name="menu_diary">DIARY</string>
+    <string name="menu_settings">SETTINGS</string>
+    <string name="menu_exit">EXIT</string>
+    
+    <!-- Settings -->
+    <string name="settings_voice">VOICE</string>
+    <string name="settings_sound">SOUND</string>
+    <string name="settings_mic">MICROPHONE</string>
 
 </resources>

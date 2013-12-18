@@ -32,7 +32,7 @@
             android:screenOrientation="landscape"/>
         
         <activity
-            android:name="com.example.spelldisaster.interfaces.BaseInterfaceActivity"
+            android:name="com.example.spelldisaster.interfaces.InterfaceMenu"
             android:screenOrientation="landscape"
             android:theme="@style/transparentBackground"/>
     </application>

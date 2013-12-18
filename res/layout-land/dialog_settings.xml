@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/dialog_margins"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/settings_voice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_voice" />
+
+        <TextView
+            android:id="@+id/settings_mic_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_mic" 
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/menu_button_text_size"/>
+
+        <TextView
+            android:id="@+id/settings_sound_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_sound" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/dialog_margins"
+        android:orientation="vertical" >
+
+        <ToggleButton
+            android:id="@+id/settings_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_settings_toggle" />
+
+        <ToggleButton
+            android:id="@+id/settings_mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_settings_toggle" />
+
+        <ToggleButton
+            android:id="@+id/settings_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_settings_toggle" />
+    </LinearLayout>
+
+</LinearLayout>

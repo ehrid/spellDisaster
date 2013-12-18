@@ -12,7 +12,7 @@ import com.example.spelldisaster.R;
 /**
  * @author horodysk
  */
-public class BaseInterfaceActivity extends Activity implements OnClickListener {
+public abstract class BaseInterfaceActivity extends Activity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class BaseInterfaceActivity extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
+        onClickAction(v);
         switch (v.getId()) {
             case R.id.button_close:
                 finish();
@@ -46,4 +47,6 @@ public class BaseInterfaceActivity extends Activity implements OnClickListener {
                 break;
         }
     }
+
+    protected abstract void onClickAction(View v);
 }
