@@ -65,6 +65,7 @@ public class InterfaceMenu extends BaseInterfaceActivity {
     protected void onClickAction(View v) {
         switch (v.getId()) {
             case R.id.menu_inventory:
+                startInventory();
                 break;
             case R.id.menu_diary:
                 startDiary();
@@ -80,6 +81,12 @@ public class InterfaceMenu extends BaseInterfaceActivity {
         }
     }
 
+    void startInventory() {
+        Intent intent = new Intent(InterfaceMenu.this, InterfaceInventory.class);
+        startActivity(intent);
+        finish();
+    }
+
     void startDiary() {
         Intent intent = new Intent(InterfaceMenu.this, InterfaceDiary.class);
         startActivity(intent);
@@ -91,4 +98,5 @@ public class InterfaceMenu extends BaseInterfaceActivity {
         startActivity(intent);
         finish();
     }
+
 }
