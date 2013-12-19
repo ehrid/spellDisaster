@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.spelldisaster.R;
+import com.example.spelldisaster.SpellDisasterApplication;
 import com.example.spelldisaster.database.DataBaseHandler;
 import com.example.spelldisaster.database.DiaryPageObject;
 
@@ -20,6 +22,8 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
 
     private EditText _rightPage;
 
+    private TextView _pageNumber;
+
     private DiaryPageObject _page;
 
     private DataBaseHandler _db;
@@ -29,6 +33,8 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
     private Button _next;
 
     private Button _previous;
+
+    private SpellDisasterApplication _app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +47,8 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
         initializeNavigationButtons(inflated);
         setNavigationButtonListeners();
 
-        _db = new DataBaseHandler(this);
-
-        _page = _db.getDiaryPage(_currentPage);
-        _leftPage.setText(_page.getLeftPage());
-        _rightPage.setText(_page.getRightPage());
-
+        initializeDatabase();
+        initializePageContent();
     }
 
     private View initializeDialogBody() {
@@ -59,12 +61,14 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
     private void initializePages(View inflated) {
         _leftPage = (EditText) inflated.findViewById(R.id.diary_left);
         _rightPage = (EditText) inflated.findViewById(R.id.diary_right);
+        _pageNumber = (TextView) inflated.findViewById(R.id.diary_page_number);
     }
 
     private void setPagesFont() {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/ASafePlacetoFall.ttf");
         _leftPage.setTypeface(font);
         _rightPage.setTypeface(font);
+        _pageNumber.setTypeface(font);
     }
 
     private void initializeNavigationButtons(View inflated) {
@@ -77,26 +81,36 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
         _previous.setOnClickListener(this);
     }
 
+    private void initializeDatabase() {
+        _db = new DataBaseHandler(this);
+        _app = (SpellDisasterApplication) getApplication();
+        _currentPage = _app.getPageValue();
+    }
+
+    private void initializePageContent() {
+        _page = _db.getDiaryPage(_currentPage);
+        _leftPage.setText(_page.getLeftPage());
+        _rightPage.setText(_page.getRightPage());
+        _pageNumber.setText(Integer.toString(_page.getPage()));
+    }
+
     @Override
     protected void onClickAction(View v) {
         saveDiaryPagesState();
         switch (v.getId()) {
             case R.id.diary_next:
                 _currentPage++;
-                _page = _db.getDiaryPage(_currentPage);
-                _leftPage.setText(_page.getLeftPage());
-                _rightPage.setText(_page.getRightPage());
+                initializePageContent();
                 break;
             case R.id.diary_previous:
                 _currentPage = Math.max(1, _currentPage - 1);
-                _page = _db.getDiaryPage(_currentPage);
-                _leftPage.setText(_page.getLeftPage());
-                _rightPage.setText(_page.getRightPage());
+                initializePageContent();
                 break;
         }
     }
 
     private void saveDiaryPagesState() {
+        _app.setPageValue(_currentPage);
         _page.setLeftPage(_leftPage.getText().toString());
         _page.setRightPage(_rightPage.getText().toString());
         _db.updateDiaryPage(_page);

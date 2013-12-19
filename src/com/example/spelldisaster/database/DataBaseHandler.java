@@ -126,10 +126,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
      * Getting pages count
      */
     public int getPagesCount() {
-        String countQuery = "SELECT  * FROM " + TABLE_PAGES;
+        String countQuery = "SELECT * FROM " + TABLE_PAGES;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
 
         return cursor.getCount();
     }
@@ -146,7 +145,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
         // updating row
         return db.update(TABLE_PAGES, values, KEY_ID + " = ?", new String[] { String.valueOf(page.getId()) });
-
     }
 
     /**

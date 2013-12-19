@@ -33,5 +33,7 @@
     <dimen name="diary_button_top_margin">225dp</dimen>
     <dimen name="diary_previous_left_margin">40dp</dimen>
     <dimen name="diary_next_left_margin">343dp</dimen>
+    <dimen name="diary_page_number_left_margin">343dp</dimen>
+    <dimen name="diary_page_number_top_margin">5dp</dimen>
 
 </resources>

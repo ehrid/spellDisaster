@@ -1,7 +1,5 @@
 package com.example.spelldisaster.interfaces;
 
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -10,17 +8,12 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.example.spelldisaster.R;
+import com.example.spelldisaster.SpellDisasterApplication;
 
 /**
  * @author horodysk
  */
 public class InterfaceSettings extends BaseInterfaceActivity {
-
-    private static final String _SOUND_LABEL = "sound";
-
-    private static final String _VOICE_LABEL = "voice";
-
-    private static final String _MIC_LABEL = "mic";
 
     private TextView _soundLabel;
 
@@ -34,9 +27,7 @@ public class InterfaceSettings extends BaseInterfaceActivity {
 
     private ToggleButton _mic;
 
-    private static final String _PREFS = "spellDisaster_settings";
-
-    private SharedPreferences _mPrefs;
+    private SpellDisasterApplication _app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,15 +68,11 @@ public class InterfaceSettings extends BaseInterfaceActivity {
     }
 
     private void setSwithcesValues() {
-        _mPrefs = getSharedPreferences(_PREFS, 0);
+        _app = (SpellDisasterApplication) getApplication();
 
-        boolean sound = _mPrefs.getBoolean(_SOUND_LABEL, true);
-        boolean voice = _mPrefs.getBoolean(_VOICE_LABEL, true);
-        boolean mic = _mPrefs.getBoolean(_MIC_LABEL, true);
-
-        _sound.setChecked(sound);
-        _voice.setChecked(voice);
-        _mic.setChecked(mic);
+        _sound.setChecked(_app.getSoundValue());
+        _voice.setChecked(_app.getVoiceValue());
+        _mic.setChecked(_app.getMicValue());
     }
 
     private void setLabelsFont() {
@@ -99,32 +86,14 @@ public class InterfaceSettings extends BaseInterfaceActivity {
     protected void onClickAction(View v) {
         switch (v.getId()) {
             case R.id.settings_sound:
-                saveNewSoundValue();
+                _app.setSoundValue(_sound.isChecked());
                 break;
             case R.id.settings_voice:
-                saveNewVoiceValue();
+                _app.setVoiceValue(_voice.isChecked());
                 break;
             case R.id.settings_mic:
-                saveNewMicValue();
+                _app.setMicValue(_mic.isChecked());
                 break;
         }
-    }
-
-    private void saveNewSoundValue() {
-        Editor e = _mPrefs.edit();
-        e.putBoolean(_SOUND_LABEL, _sound.isChecked());
-        e.commit();
-    }
-
-    private void saveNewVoiceValue() {
-        Editor e = _mPrefs.edit();
-        e.putBoolean(_VOICE_LABEL, _voice.isChecked());
-        e.commit();
-    }
-
-    private void saveNewMicValue() {
-        Editor e = _mPrefs.edit();
-        e.putBoolean(_MIC_LABEL, _mic.isChecked());
-        e.commit();
     }
 }

@@ -62,4 +62,15 @@
         android:layout_marginTop="@dimen/diary_button_top_margin"
         android:background="@null" />
 
+    <TextView
+        android:id="@+id/diary_page_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/diary_page_number_left_margin"
+        android:layout_marginTop="@dimen/diary_page_number_top_margin"
+        android:textSize="@dimen/diary_text_size"/>
+
 </RelativeLayout>
