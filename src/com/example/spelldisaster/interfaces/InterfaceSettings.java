@@ -44,10 +44,11 @@ public class InterfaceSettings extends BaseInterfaceActivity {
 
         View inflated = initializeDialogBody();
         initializeLabels(inflated);
-        initializeSwithces(inflated);
-        setSwithcesValues();
-        setSwithcesListener();
         setLabelsFont();
+
+        initializeSwithces(inflated);
+        setSwithcesListener();
+        setSwithcesValues();
     }
 
     private View initializeDialogBody() {
@@ -69,6 +70,12 @@ public class InterfaceSettings extends BaseInterfaceActivity {
         _mic = (ToggleButton) inflated.findViewById(R.id.settings_mic);
     }
 
+    private void setSwithcesListener() {
+        _sound.setOnClickListener(this);
+        _voice.setOnClickListener(this);
+        _mic.setOnClickListener(this);
+    }
+
     private void setSwithcesValues() {
         _mPrefs = getSharedPreferences(_PREFS, 0);
 
@@ -76,15 +83,9 @@ public class InterfaceSettings extends BaseInterfaceActivity {
         boolean voice = _mPrefs.getBoolean(_VOICE_LABEL, true);
         boolean mic = _mPrefs.getBoolean(_MIC_LABEL, true);
 
-        _sound.setActivated(sound);
-        _voice.setActivated(voice);
-        _mic.setActivated(mic);
-    }
-
-    private void setSwithcesListener() {
-        _sound.setOnClickListener(this);
-        _voice.setOnClickListener(this);
-        _mic.setOnClickListener(this);
+        _sound.setChecked(sound);
+        _voice.setChecked(voice);
+        _mic.setChecked(mic);
     }
 
     private void setLabelsFont() {

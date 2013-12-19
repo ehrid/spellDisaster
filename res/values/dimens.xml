@@ -20,5 +20,18 @@
     
     <!-- Settings -->
     <dimen name="settings_width">160dp</dimen>
+    
+    <!-- Diary -->
+    <dimen name="diary_width">400dp</dimen>
+    <dimen name="diary_height">250dp</dimen>
+    <dimen name="diary_page_width">140sp</dimen>
+    <dimen name="diary_left_page_left_margin">45sp</dimen>
+    <dimen name="diary_right_page_left_margin">30sp</dimen>
+    <dimen name="diary_page_top_margin">20sp</dimen>
+    <dimen name="diary_text_size">14dp</dimen>
+    <dimen name="diary_buttons_size">20dp</dimen>
+    <dimen name="diary_button_top_margin">225dp</dimen>
+    <dimen name="diary_previous_left_margin">40dp</dimen>
+    <dimen name="diary_next_left_margin">343dp</dimen>
 
 </resources>

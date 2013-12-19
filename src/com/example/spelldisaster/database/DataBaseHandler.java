@@ -90,6 +90,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 page.setLeftPage(cursor.getString(2));
                 page.setRightPage(cursor.getString(3));
             }
+            else {
+                addDiaryPage(page);
+            }
         }
 
         return page;
@@ -138,7 +141,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_PAGE, page.getPage());
         values.put(KEY_LEFT, page.getLeftPage());
         values.put(KEY_RIGHT, page.getRightPage());
 

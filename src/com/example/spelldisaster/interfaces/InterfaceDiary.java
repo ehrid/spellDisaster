@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewStub;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.spelldisaster.R;
@@ -23,6 +24,12 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
 
     private DataBaseHandler _db;
 
+    private int _currentPage = 1;
+
+    private Button _next;
+
+    private Button _previous;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +38,15 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
         initializePages(inflated);
         setPagesFont();
 
+        initializeNavigationButtons(inflated);
+        setNavigationButtonListeners();
+
         _db = new DataBaseHandler(this);
-        _page = _db.getDiaryPage(0);
+
+        _page = _db.getDiaryPage(_currentPage);
         _leftPage.setText(_page.getLeftPage());
         _rightPage.setText(_page.getRightPage());
+
     }
 
     private View initializeDialogBody() {
@@ -55,12 +67,38 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
         _rightPage.setTypeface(font);
     }
 
+    private void initializeNavigationButtons(View inflated) {
+        _next = (Button) inflated.findViewById(R.id.diary_next);
+        _previous = (Button) inflated.findViewById(R.id.diary_previous);
+    }
+
+    private void setNavigationButtonListeners() {
+        _next.setOnClickListener(this);
+        _previous.setOnClickListener(this);
+    }
+
     @Override
     protected void onClickAction(View v) {
         saveDiaryPagesState();
+        switch (v.getId()) {
+            case R.id.diary_next:
+                _currentPage++;
+                _page = _db.getDiaryPage(_currentPage);
+                _leftPage.setText(_page.getLeftPage());
+                _rightPage.setText(_page.getRightPage());
+                break;
+            case R.id.diary_previous:
+                _currentPage = Math.max(1, _currentPage - 1);
+                _page = _db.getDiaryPage(_currentPage);
+                _leftPage.setText(_page.getLeftPage());
+                _rightPage.setText(_page.getRightPage());
+                break;
+        }
     }
 
     private void saveDiaryPagesState() {
+        _page.setLeftPage(_leftPage.getText().toString());
+        _page.setRightPage(_rightPage.getText().toString());
         _db.updateDiaryPage(_page);
     }
 

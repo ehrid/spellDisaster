@@ -81,14 +81,14 @@ public class InterfaceMenu extends BaseInterfaceActivity {
     }
 
     void startDiary() {
-        finish();
         Intent intent = new Intent(InterfaceMenu.this, InterfaceDiary.class);
         startActivity(intent);
+        finish();
     }
 
     void startSettings() {
-        finish();
         Intent intent = new Intent(InterfaceMenu.this, InterfaceSettings.class);
         startActivity(intent);
+        finish();
     }
 }
