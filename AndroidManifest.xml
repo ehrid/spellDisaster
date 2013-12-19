@@ -7,52 +7,40 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="18" />
-    
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.example.spelldisaster.SpellDisasterApplication"
         android:allowBackup="true"
+        android:configChanges="orientation"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:screenOrientation="landscape"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.spelldisaster.loading.LogoEhrid"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity
-            android:name="com.example.spelldisaster.loading.LogoUnity"
-            android:screenOrientation="landscape"/>
-        
-        <activity
-            android:name="com.example.spelldisaster.activities.MainActivity"
-            android:screenOrientation="landscape"/>
-        
+        <activity android:name="com.example.spelldisaster.loading.LogoUnity" />
+        <activity android:name="com.example.spelldisaster.activities.MainActivity" />
         <activity
             android:name="com.example.spelldisaster.interfaces.InterfaceMenu"
-            android:screenOrientation="landscape"
-            android:theme="@style/transparentBackground"/>
-        
+            android:theme="@style/transparentBackground" />
         <activity
             android:name="com.example.spelldisaster.interfaces.InterfaceSettings"
-            android:screenOrientation="landscape"
-            android:theme="@style/transparentBackground"/>
-        
+            android:theme="@style/transparentBackground" />
         <activity
             android:name="com.example.spelldisaster.interfaces.InterfaceDiary"
-            android:screenOrientation="landscape"
-            android:theme="@style/transparentBackground"/>
-        
+            android:theme="@style/transparentBackground" />
         <activity
             android:name="com.example.spelldisaster.interfaces.InterfaceInventory"
-            android:screenOrientation="landscape"
-            android:theme="@style/transparentBackground"/>
+            android:theme="@style/transparentBackground" />
     </application>
 
 </manifest>

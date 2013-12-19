@@ -10,19 +10,19 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/style_dialog_carbon_background">
+        android:background="@drawable/style_dialog_carbon_background" >
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/style_dialog_frame"
             android:padding="@dimen/dialog_padding" >
-            
+
             <ViewStub
-			    android:id="@+id/dialog_stub"
-			    android:inflatedId="@+id/dialog_body"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content" />
+                android:id="@+id/dialog_stub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inflatedId="@+id/dialog_body" />
         </RelativeLayout>
     </RelativeLayout>
 
