@@ -4,7 +4,7 @@
 
     <GridView
         android:id="@+id/inventory_countainer"
-        android:layout_width="210dp"
+        android:layout_width="@dimen/inventory_container_width"
         android:layout_height="wrap_content"
         android:numColumns="5" >
     </GridView>

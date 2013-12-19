@@ -11,16 +11,16 @@
     <dimen name="interface_button_margin_small">30dp</dimen>
     <dimen name="interface_button_margin_big">60dp</dimen>
     <dimen name="interface_margin_small">10dp</dimen>
-    
+
     <!-- Menu -->
     <dimen name="menu_button_width">150dp</dimen>
     <dimen name="menu_button_height">40dp</dimen>
     <dimen name="menu_button_margins">5dp</dimen>
     <dimen name="menu_button_text_size">20dp</dimen>
-    
+
     <!-- Settings -->
     <dimen name="settings_width">160dp</dimen>
-    
+
     <!-- Diary -->
     <dimen name="diary_width">400dp</dimen>
     <dimen name="diary_height">250dp</dimen>
@@ -35,5 +35,13 @@
     <dimen name="diary_next_left_margin">343dp</dimen>
     <dimen name="diary_page_number_left_margin">343dp</dimen>
     <dimen name="diary_page_number_top_margin">5dp</dimen>
+
+    <!-- Inventory -->
+    <dimen name="inventory_item_size">40sp</dimen>
+    <dimen name="inventory_item_padding">5dp</dimen>
+    <dimen name="inventory_container_width">5dp</dimen>
+    <dimen name="inventory_hero_height">230dp</dimen>
+    <dimen name="inventory_hero_width">160dp</dimen>
+    <dimen name="inventory_hero_margin_left">230dp</dimen>
 
 </resources>

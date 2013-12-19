@@ -3,9 +3,9 @@
     android:layout_height="@dimen/diary_height" >
 
     <ImageView
-        android:layout_width="160sp"
-        android:layout_height="230sp"
-        android:layout_marginLeft="230sp"
+        android:layout_width="@dimen/inventory_hero_width"
+        android:layout_height="@dimen/inventory_hero_height"
+        android:layout_marginLeft="@dimen/inventory_hero_margin_left"
         android:src="@drawable/inventory_hero" />
     
     <include
