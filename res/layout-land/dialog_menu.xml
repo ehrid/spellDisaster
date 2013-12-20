@@ -31,7 +31,6 @@
         android:background="@drawable/style_menu_button"
         android:textColor="@color/text_white"
         android:textSize="@dimen/menu_button_text_size"
-        android:fontFamily=""
         android:text="@string/menu_settings" />
 
     <Button

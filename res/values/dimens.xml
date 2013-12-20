@@ -37,11 +37,9 @@
     <dimen name="diary_page_number_top_margin">5dp</dimen>
 
     <!-- Inventory -->
-    <dimen name="inventory_item_size">40sp</dimen>
-    <dimen name="inventory_item_padding">5dp</dimen>
-    <dimen name="inventory_container_width">5dp</dimen>
-    <dimen name="inventory_hero_height">230dp</dimen>
-    <dimen name="inventory_hero_width">160dp</dimen>
-    <dimen name="inventory_hero_margin_left">230dp</dimen>
+    <dimen name="inventory_width">200sp</dimen>
+    <dimen name="inventory_height">220sp</dimen>
+    <dimen name="inventory_background_width">230sp</dimen>
+    <dimen name="inventory_background_height">250sp</dimen>
 
 </resources>

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical" >
+
+    <ImageView
+        android:id="@+id/inventory_item_icon"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/inventory_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/inventory_item_weight"
+        android:layout_width="50sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp" />
+
+</LinearLayout>
