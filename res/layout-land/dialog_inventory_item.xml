@@ -1,18 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical" >
+    android:gravity="center_vertical" 
+    android:layout_marginTop="5sp">
 
     <ImageView
         android:id="@+id/inventory_item_icon"
-        android:layout_width="30sp"
-        android:layout_height="30sp"
+        android:layout_width="20sp"
+        android:layout_height="20sp"
         android:src="@drawable/ic_launcher" />
 
     <TextView
         android:id="@+id/inventory_item_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
         android:layout_marginLeft="5sp"
         android:layout_weight="1" />
 
@@ -20,6 +22,7 @@
         android:id="@+id/inventory_item_weight"
         android:layout_width="50sp"
         android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
         android:layout_marginLeft="5sp" />
 
 </LinearLayout>

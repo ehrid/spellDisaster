@@ -65,7 +65,7 @@ public class InterfaceDiary extends BaseInterfaceNoFrameActivity {
     }
 
     private void setPagesFont() {
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/ASafePlacetoFall.ttf");
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/GirlsHaveManySecrets.ttf");
         _leftPage.setTypeface(font);
         _rightPage.setTypeface(font);
         _pageNumber.setTypeface(font);

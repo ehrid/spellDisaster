@@ -3,6 +3,7 @@ package com.example.spelldisaster.inventory;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +71,11 @@ public class InventoryListViewAdapter extends ArrayAdapter<InventoryItem> {
         icon.setImageResource(item.getIcon());
         name.setText(item.getName());
         weight.setText(Double.toString(item.getWeight()));
+
+        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/LibbyHand.ttf");
+        name.setTypeface(font);
+        weight.setTypeface(font);
+
     }
 
 }

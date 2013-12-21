@@ -12,12 +12,17 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="15sp" >
+        android:padding="@dimen/inventory_padding" >
 
         <ListView
             android:id="@+id/inventory_countainer"
             android:layout_width="@dimen/inventory_width"
-            android:layout_height="@dimen/inventory_height" >
+            android:layout_height="@dimen/inventory_height"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:fadingEdge="none" 
+            android:scrollbars="none"
+            android:overScrollMode="never">
         </ListView>
     </RelativeLayout>
 
