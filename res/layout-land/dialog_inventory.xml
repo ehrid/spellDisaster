@@ -7,11 +7,12 @@
         android:layout_height="@dimen/inventory_background_height"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/background_inventory" />
+        android:src="@drawable/background_inventory_devided" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:padding="@dimen/inventory_padding" >
 
         <ListView

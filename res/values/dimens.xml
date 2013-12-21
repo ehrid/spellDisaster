@@ -38,7 +38,7 @@
 
     <!-- Inventory -->
     <dimen name="inventory_width">200sp</dimen>
-    <dimen name="inventory_height">220sp</dimen>
+    <dimen name="inventory_height">210sp</dimen>
     <dimen name="inventory_background_width">230sp</dimen>
     <dimen name="inventory_background_height">250sp</dimen>
     <dimen name="inventory_padding">15sp</dimen>

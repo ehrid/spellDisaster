@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/inventory_item_weight"
-        android:layout_width="50sp"
+        android:layout_width="45sp"
         android:layout_height="wrap_content"
         android:textColor="@color/text_black"
         android:layout_marginLeft="5sp" />
