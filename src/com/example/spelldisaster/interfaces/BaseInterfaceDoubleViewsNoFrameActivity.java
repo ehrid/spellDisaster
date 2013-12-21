@@ -8,12 +8,12 @@ import com.example.spelldisaster.R;
 /**
  * @author horodysk
  */
-public abstract class BaseInterfaceNoFrameActivity extends BaseInterfaceActivity {
+public abstract class BaseInterfaceDoubleViewsNoFrameActivity extends BaseInterfaceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_base_no_frame);
+        setContentView(R.layout.dialog_base_double_no_frame);
         initializeBaseItems();
     }
 

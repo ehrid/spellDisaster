@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_background"
+    android:layout_width="fill_parent"
+    android:baselineAligned="true"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <RelativeLayout
+            android:id="@+id/dialog_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <ViewStub
+                android:id="@+id/dialog_stub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inflatedId="@+id/dialog_body" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/button_close"
+            android:layout_width="@dimen/interface_button_size"
+            android:layout_height="@dimen/interface_button_size"
+            android:layout_above="@+id/dialog_frame"
+            android:layout_marginBottom="@dimen/dialog_close_indentation"
+            android:layout_marginLeft="@dimen/dialog_close_indentation"
+            android:layout_toRightOf="@+id/dialog_frame"
+            android:src="@drawable/button_close" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:layout_width="140sp"
+            android:layout_height="200sp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/inventory_hero" />
+    </RelativeLayout>
+
+</LinearLayout>

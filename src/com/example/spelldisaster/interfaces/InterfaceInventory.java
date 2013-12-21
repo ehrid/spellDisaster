@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import com.example.spelldisaster.R;
 import com.example.spelldisaster.inventory.InventoryItem;
@@ -16,7 +15,7 @@ import com.example.spelldisaster.inventory.InventoryListViewAdapter;
 /**
  * @author horodysk
  */
-public class InterfaceInventory extends BaseInterfaceNoFrameActivity {
+public class InterfaceInventory extends BaseInterfaceDoubleViewsNoFrameActivity {
 
     List<InventoryItem> gridArray = new ArrayList<InventoryItem>();
 
@@ -25,24 +24,28 @@ public class InterfaceInventory extends BaseInterfaceNoFrameActivity {
         super.onCreate(savedInstanceState);
 
         View inflated = initializeDialogBody();
-        changeBaseLayoutPossition();
 
         ListView container = (ListView) inflated.findViewById(R.id.inventory_countainer);
 
         List<InventoryItem> items = new ArrayList<InventoryItem>();
-        items.add(new InventoryItem(1, R.drawable.ic_launcher, "Item 1", 10.1));
-        items.add(new InventoryItem(2, R.drawable.ic_launcher, "Item 2", 11.1));
-        items.add(new InventoryItem(3, R.drawable.ic_launcher, "Item 3", 1.1));
-        items.add(new InventoryItem(4, R.drawable.ic_launcher, "Item 4", 99.2));
-        items.add(new InventoryItem(5, R.drawable.ic_launcher, "Item 5", 0.1));
-        items.add(new InventoryItem(6, R.drawable.ic_launcher, "Item 6", 0.1));
-        items.add(new InventoryItem(7, R.drawable.ic_launcher, "Item 7", 0.1));
-        items.add(new InventoryItem(8, R.drawable.ic_launcher, "Item 8", 999.9));
-        items.add(new InventoryItem(9, R.drawable.ic_launcher, "Item 9", 120.1));
+        items.add(new InventoryItem(1, R.drawable.icon_arrow, "Arrow", 10.1));
+        items.add(new InventoryItem(2, R.drawable.icon_axe, "Axe", 11.1));
+        items.add(new InventoryItem(3, R.drawable.icon_beer, "Beer", 1.1));
+        items.add(new InventoryItem(4, R.drawable.icon_bow, "Bow", 99.2));
+        items.add(new InventoryItem(5, R.drawable.icon_letter, "12 April, Adam", 0.1));
+        items.add(new InventoryItem(6, R.drawable.icon_mace, "Mace", 0.1));
+        items.add(new InventoryItem(7, R.drawable.icon_mandrake_root, "Mandrake root", 0.1));
+        items.add(new InventoryItem(8, R.drawable.icon_map, "Treasure map", 999.9));
+        items.add(new InventoryItem(9, R.drawable.icon_steel_armor, "Steel armor", 120.1));
+        items.add(new InventoryItem(10, R.drawable.icon_steel_boots, "Steel boots", 120.1));
+        items.add(new InventoryItem(11, R.drawable.icon_steel_gauntlets, "Steel gauntlets", 120.1));
+        items.add(new InventoryItem(12, R.drawable.icon_steel_greaves, "Steel greaves", 120.1));
+        items.add(new InventoryItem(13, R.drawable.icon_steel_helmet, "Steel helmet", 120.1));
+        items.add(new InventoryItem(14, R.drawable.icon_steel_shield, "Steel shield", 120.1));
+        items.add(new InventoryItem(15, R.drawable.icon_book, "Cook book", 99.2));
 
         InventoryListViewAdapter adapter = new InventoryListViewAdapter(this, R.layout.dialog_inventory_item, items);
         container.setAdapter(adapter);
-
     }
 
     private View initializeDialogBody() {
@@ -50,12 +53,6 @@ public class InterfaceInventory extends BaseInterfaceNoFrameActivity {
         stub.setLayoutResource(R.layout.dialog_inventory);
         View inflated = stub.inflate();
         return inflated;
-    }
-
-    private void changeBaseLayoutPossition() {
-        RelativeLayout frame = (RelativeLayout) findViewById(R.id.dialog_frame);
-
-        // TODO changeing possition
     }
 
     @Override
