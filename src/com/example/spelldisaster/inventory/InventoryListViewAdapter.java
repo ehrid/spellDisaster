@@ -25,7 +25,6 @@ public class InventoryListViewAdapter extends ArrayAdapter<InventoryItem> {
     public InventoryListViewAdapter(Context context, int resource, List<InventoryItem> items) {
         super(context, resource, items);
         _resource = resource;
-
     }
 
     /***/
