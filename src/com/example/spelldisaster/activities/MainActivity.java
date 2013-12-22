@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.example.spelldisaster.R;
-import com.example.spelldisaster.interfaces.InterfaceMenu;
+import com.example.spelldisaster.interfaces.activities.InterfaceMenu;
 
 /**
  * @author horodysk

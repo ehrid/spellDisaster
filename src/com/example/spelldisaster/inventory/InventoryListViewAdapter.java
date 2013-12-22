@@ -33,11 +33,6 @@ public class InventoryListViewAdapter extends ArrayAdapter<InventoryItem> {
     }
 
     @Override
-    public boolean isEnabled(@SuppressWarnings("unused") int position) {
-        return false;
-    }
-
-    @Override
     public View getView(int position, View convertView, @SuppressWarnings("unused") ViewGroup parent) {
         LinearLayout inventoryItemView = inflateTheView(convertView);
         initializeVIewItems(position, inventoryItemView);

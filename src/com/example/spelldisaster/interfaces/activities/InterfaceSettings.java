@@ -1,4 +1,4 @@
-package com.example.spelldisaster.interfaces;
+package com.example.spelldisaster.interfaces.activities;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.ToggleButton;
 
 import com.example.spelldisaster.R;
 import com.example.spelldisaster.SpellDisasterApplication;
+import com.example.spelldisaster.interfaces.BaseInterfaceActivity;
 
 /**
  * @author horodysk

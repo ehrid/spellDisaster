@@ -1,4 +1,4 @@
-package com.example.spelldisaster.interfaces;
+package com.example.spelldisaster.interfaces.activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -8,6 +8,7 @@ import android.view.ViewStub;
 import android.widget.Button;
 
 import com.example.spelldisaster.R;
+import com.example.spelldisaster.interfaces.BaseInterfaceActivity;
 
 /**
  * @author horodysk

@@ -30,16 +30,16 @@
         <activity android:name="com.example.spelldisaster.loading.LogoUnity" />
         <activity android:name="com.example.spelldisaster.activities.MainActivity" />
         <activity
-            android:name="com.example.spelldisaster.interfaces.InterfaceMenu"
+            android:name="com.example.spelldisaster.interfaces.activities.InterfaceMenu"
             android:theme="@style/transparentBackground" />
         <activity
-            android:name="com.example.spelldisaster.interfaces.InterfaceSettings"
+            android:name="com.example.spelldisaster.interfaces.activities.InterfaceSettings"
             android:theme="@style/transparentBackground" />
         <activity
-            android:name="com.example.spelldisaster.interfaces.InterfaceDiary"
+            android:name="com.example.spelldisaster.interfaces.activities.InterfaceDiary"
             android:theme="@style/transparentBackground" />
         <activity
-            android:name="com.example.spelldisaster.interfaces.InterfaceInventory"
+            android:name="com.example.spelldisaster.interfaces.activities.InterfaceInventory"
             android:theme="@style/transparentBackground" />
     </application>
 

@@ -3,7 +3,7 @@ package com.example.spelldisaster.inventory;
 /**
  * @author horodysk
  */
-public class InventoryItem {
+public abstract class InventoryItem {
 
     private int _id;
 
@@ -56,5 +56,8 @@ public class InventoryItem {
     public int getId() {
         return _id;
     }
+
+    /***/
+    public abstract String getType();
 
 }

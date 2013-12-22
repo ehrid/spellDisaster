@@ -1,4 +1,4 @@
-package com.example.spelldisaster.interfaces;
+package com.example.spelldisaster.interfaces.activities;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import com.example.spelldisaster.R;
 import com.example.spelldisaster.SpellDisasterApplication;
 import com.example.spelldisaster.database.DataBaseHandler;
 import com.example.spelldisaster.database.DiaryPageObject;
+import com.example.spelldisaster.interfaces.BaseInterfaceNoFrameActivity;
 
 /**
  * @author horodysk
